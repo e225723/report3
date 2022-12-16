@@ -12,13 +12,14 @@ class EnemyTest {
      *  (3) 敵が死んだ状態ならば攻撃できないはず。
      * 　　つまり攻撃実行してもヒーローのHPは減っていないことを期待。これを検証する。
      */
-    @Test
+    
+     @Test
     void attackTest() {
         int defaultHeroHp = 100;
         Hero demoHero = new Hero("デモ勇者", defaultHeroHp, 100);
         Enemy slime = new Enemy("スライムもどき", 10, 100);
         demoHero.attack(slime);
         slime.attack(demoHero);
-        assertEquals(defaultHeroHp, demoHero.hitPoint);
+        assertEquals(defaultHeroHp, demoHero.gethitPoint());
     }
 }
