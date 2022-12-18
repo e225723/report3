@@ -28,23 +28,14 @@ public class Hero extends Livingthing{
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
      * @param e 攻撃対象
      */
-    public String getname(){
-        return name;
-    }
+    
     public void setname(String name){
         this.name = name;
 
     }
-    public boolean getdead(){
-        return dead;
-    }
+    
     public int gethitPoint(){
         return hitPoint;
-    }
-     public void attack(Enemy e){
-        int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, e.getname(), damage);
-        e.wounded(damage);
     }
 
     /**

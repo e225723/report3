@@ -23,32 +23,15 @@ public class Enemy extends Livingthing{
     public Enemy (String name, int maximumHP, int attack) {
         super(name, maximumHP, attack);
     }
-
     /**
      * Heroへ攻撃するメソッド。
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
      * @param hero 攻撃対象
      */
-    public String getname(){
-        return name;
-    }
+    
     public void setname(String name){
         this.name = name;
-
     }
-    public boolean getdead(){
-        return dead;
-    }
-    
-     public void attack(Hero hero){
-        if(!dead){
-            int damage = (int)(Math.random() * attack);
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getname(), damage);
-            hero.wounded(damage);
-        }
-    }
-
-
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
      * 指定されたダメージを hitPoint から引き、死亡判定を行う。
