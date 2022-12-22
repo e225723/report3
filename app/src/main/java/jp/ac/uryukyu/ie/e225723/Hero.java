@@ -28,15 +28,6 @@ public class Hero extends Livingthing{
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
      * @param e 攻撃対象
      */
-    
-    public void setname(String name){
-        this.name = name;
-
-    }
-    
-    public int gethitPoint(){
-        return hitPoint;
-    }
 
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
@@ -45,10 +36,10 @@ public class Hero extends Livingthing{
      */
     @Override
     public void wounded(int damage){
-        hitPoint -= damage;
-        if( hitPoint < 0 ) {
-            dead = true;
-            System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
+        sethitPoint(gethitPoint() - damage);
+        if( gethitPoint() < 0 ) {
+            setdead(true);
+            System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", getname());
         }
     }
 }

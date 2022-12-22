@@ -29,9 +29,9 @@ public class Enemy extends Livingthing{
      * @param hero 攻撃対象
      */
     
-    public void setname(String name){
-        this.name = name;
-    }
+    //public void setname(String name){
+        //this.name = name;
+    //}
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
      * 指定されたダメージを hitPoint から引き、死亡判定を行う。
@@ -39,10 +39,10 @@ public class Enemy extends Livingthing{
      */
     @Override
     public void wounded(int damage){
-        hitPoint -= damage;
-        if( hitPoint < 0 ) {
-            dead = true;
-            System.out.printf("モンスター%sは倒れた。\n", name);
+        sethitPoint(gethitPoint() - damage);
+        if( gethitPoint() < 0 ) {
+            setdead(true);
+            System.out.printf("モンスター%sは倒れた。\n", getname());
         }
     }
 

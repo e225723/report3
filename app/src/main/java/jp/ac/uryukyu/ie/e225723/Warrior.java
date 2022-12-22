@@ -7,9 +7,9 @@ public class Warrior extends Livingthing{
         super(name, maximumHP, attack);
     }
     public void attackWithWeponSkill(Livingthing opponent2){
-        if(!dead){
-            int damage = (int)(attack * 1.5);
-            System.out.printf("%sの攻撃！ウェポンスキルを発動！%sに%dのダメージを与えた！！\n", name, opponent2.getname(), damage);
+        if(!getdead()){
+            int damage = (int)(getattack() * 1.5);
+            System.out.printf("%sの攻撃！ウェポンスキルを発動！%sに%dのダメージを与えた！！\n", getname(), opponent2.getname(), damage);
             opponent2.wounded(damage);
         }
     }

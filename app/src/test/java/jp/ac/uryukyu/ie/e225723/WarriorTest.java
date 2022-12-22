@@ -11,6 +11,6 @@ public class WarriorTest {
         demoHero.attackWithWeponSkill(slime);
         demoHero.attackWithWeponSkill(slime);
         slime.attack(demoHero);
-        assertEquals(150,demoHero.attack*1.5 );
+        assertEquals(150,demoHero.getattack()*1.5 );
     }
 }
